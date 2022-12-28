@@ -83,7 +83,7 @@
 
       * 인덱스 매핑 정보 설계 결과
 
-        <img src="/Users/inkwon/Library/Application Support/typora-user-images/image-20221228174722041.png" alt="image-20221228174722041" style="zoom:25%;" />
+        <img src="./images/mapping.png" alt="image-20221228174722041" style="zoom:25%;" />
 
 3. **Elasticsearch 샤드 개수, 레플리카 개수 설계 및 성능 검증**
 
@@ -100,7 +100,7 @@
 
       * 성능 검증 결과 - ***5개가 10개일때보다 성능이 향상된 것을 보여 샤드 5개로 설정***
 
-        <img src="/Users/inkwon/Library/Application Support/typora-user-images/image-20221228180007425.png" alt="image-20221228180007425" style="zoom:50%;" />
+        <img src="./images/shard.png" alt="image-20221228180007425" style="zoom:50%;" />
 
 4. **Kibana로 시각화 작업 진행**
 
@@ -113,7 +113,7 @@
 
 * 업체별 필드 상위 10개 변경량
 
-  ![image-20221228181553292](/Users/inkwon/Library/Application Support/typora-user-images/image-20221228181553292.png)
+  ![image-20221228181553292](./images/first-chart.png)
   
 * 그 외 다수 대시보드 존재
 
@@ -123,7 +123,7 @@
 
   1. 데이터 유지 문제
 
-     ![image-20221228173632185](/Users/inkwon/Library/Application Support/typora-user-images/image-20221228173632185.png)
+     ![image-20221228173632185](./images/first-problem.png)
 
      * Elasticsearch의 기능인 ILM 주기가 3달이라 **데이터 유지 불가능** ( Historical한 데이터 집계 불가 )
 
@@ -133,7 +133,7 @@
 
   3. 키바나에서 제공하지 못하는 특별한 기능 제공
   
-     ![image-20221228182101457](/Users/inkwon/Library/Application Support/typora-user-images/image-20221228182101457.png)
+     ![image-20221228182101457](./images/second-problem.png)
   
      * 집계 데이터를 추출하고 가공하여 Kibana에서 보기 힘든 데이터를 시각화해 주면 좋을 것 같다고 판단
      * Kibana의 유료 기능들을 직접 만들어 제공하면 좋을 것 같아 진행
@@ -169,7 +169,7 @@
 
    1. Kibana Rollup Job을 한 이유?
 
-     ![image-20221228190651962](/Users/inkwon/Library/Application Support/typora-user-images/image-20221228190651962.png)
+     ![image-20221228190651962](./images/roll-up.png)
 
      1. 필요한 집계 데이터를 빨리 가지고 오게 하기 위해 일종의 캐싱 역할을 한다고 생각
      2. 또한 기존 인덱스는 짧은 생명주기로 인해 historical한 데이터를 가지고 오게 해야한다면 문제가 발생할 수 있음
@@ -177,26 +177,26 @@
 
    2. 인덱스 롤업한 결과
 
-     ![image-20221228190907728](/Users/inkwon/Library/Application Support/typora-user-images/image-20221228190907728.png)
+     ![image-20221228190907728](./images/roll-up-result.png)
 
 2. **스프링 배치 잡 어플리케이션을 만들어 Rollup Job으로 만들어진 인덱스를 집계 모듈로 집계 후 데이터 가공**
 
    1. 어떻게 구현할까?
 
-      1. Elasticsearch 인덱스 집계 모듈을 카프카로 구현
+      1. Elasticsearch 인덱스 집계 모듈을 코틀린으로 구현
 
-         * 카프카로 구현한 이유?
+         *  코틀린으로 구현한 이유?
 
            * 새로운 도전을 해보고 싶어서 진행
            * 자바 특유의 복잡성을 줄이고 싶어서 진행
 
          * 구현 코드
 
-           ![image-20221228193401773](/Users/inkwon/Library/Application Support/typora-user-images/image-20221228193401773.png)
+           ![image-20221228193401773](./images/kotlin.png)
 
       2. 집계 모듈 만들 때 다른 곳에서도 사용이 가능하도록 ***(범용적으로 사용할 수 있도록)*** 재귀로 구현
 
-         ![image-20221228192304036](/Users/inkwon/Library/Application Support/typora-user-images/image-20221228192304036.png)
+         ![image-20221228192304036](./images/recurrence.png)
 
       3. 집계 모듈로 데이터를 가지고 와 데이터 가공 후 몽고 DB에 색인 기능 구현
 
@@ -210,13 +210,13 @@
 
    2. Airflow DAG 구현 결과
 
-      ![image-20221228191303518](/Users/inkwon/Library/Application Support/typora-user-images/image-20221228191303518.png)
+      ![image-20221228191303518](./images/airflow.png)
 
 4. **Mongo DB에 저장된 데이터를 집계하여 React로 Custom BI Tool을 구현**
 
    1. 구현 방법
 
-      ![image-20221228185936570](/Users/inkwon/Library/Application Support/typora-user-images/image-20221228185936570.png)
+      ![image-20221228185936570](./images/mongo.png)
 
       1. 엘라스틱 서치에서 2차 가공된 데이터 집계 
       2. 몽고 DB에서 2차 강고된 데이터 집계 -> 선택
@@ -235,7 +235,7 @@
 
       * 결과 - ***평균 4 ~ 9 초 걸리는 집계 쿼리를 50 밀리세컨드로 속도 향상시키게 만듬 (160배 향상) ***
 
-        ![image-20221228191532181](/Users/inkwon/Library/Application Support/typora-user-images/image-20221228191532181.png)
+        ![image-20221228191532181](./images/mongo-result.png)
 
 5. **React와 차트 라이브러리를 사용해 시각화 기능 제공**
 
