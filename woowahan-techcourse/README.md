@@ -230,10 +230,10 @@
       * 쿼리 튜닝
       * 세션 인증 -> OAuth + Jwt 방식으로 변경
       * 멀티 모듈 도입
-      * **자세한 내용은 링크를 통해 확인해주시면 감사하겠습니다 :) - [업무 상세 보기](https://github.com/backlo/stardium)**
-    * 관련 링크
-      * [동영상 링크](https://www.youtube.com/watch?v=wkLuv0CkU60)
+    * **자세한 내용은 링크를 통해 확인해주시면 감사하겠습니다 :) - [업무 상세 보기](https://github.com/backlo/stardium)**
     
+  * 관련 링크
+    * [동영상 링크](https://www.youtube.com/watch?v=wkLuv0CkU60)
 
 
 <br/>
