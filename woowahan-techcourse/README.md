@@ -126,9 +126,9 @@
 
 ![image-20221227185833609](./images/2-mini-project.png)
 
-* [MiniProject](https://github.com/backlo/miniprojects-2019)
+* [MiniProject](https://github.com/woowahan-ioi)
   * 4주간 진행한 유튜브 클론 미니 프로젝트
-  * 5명 팀을 이루어 협업 진행
+  * 5명 팀을 이루어 협업
   * 내가 맡은 업무
     * JPA로 동영상 관련 CRUD 작업 진행
     * 정적 파일을 업로드 시킬 AWS S3 연동 및 Mocking 테스트
@@ -136,7 +136,6 @@
     * **자세한 내용은 링크를 통해 확인해주시면 감사하겠습니다 :) - [업무 상세 보기](https://github.com/backlo/miniprojects-2019)**
   * 관련 링크
     * [동영상 링크](https://www.youtube.com/playlist?list=PLgXGHBqgT2TsWUA5puZimG3DDlJTd370Q)
-    * [공용 Repository](https://github.com/woowahan-ioi)
 
 <br/>
 
@@ -209,21 +208,33 @@
 * 배포를 자동화하고, 피드백을 받아 지속해서 개선
 * 서비스를 기획, 구현, 배포해 실사용자가 사용하도록 개발
 
-### [Stardium 프로젝트](https://github.com/backlo/stardium)
+### 팀 프로젝트
 
-* 2달간 5명의 팀을 이루어 협업 진행
-* 내가 맡은 업무
-  * Stardium 서비스의 프론트 작업 진행 (thyme leaf, bootstrap 등)
-  * 유저 관련 도메인 기능 구현 (CRUD, 차단 등)
-  * 써드파티 로그인 기능 구현
-  * **추가로 개인프로젝트 진행**
-    * 동기에서 비동기로 변경 -> Rest API로 변경
-    * 쿼리 튜닝
-    * 세션 인증 -> OAuth + Jwt 방식으로 변경
-    * 멀티 모듈 도입
-    * **자세한 내용은 링크를 통해 확인해주시면 감사하겠습니다 :) - [업무 상세 보기](https://github.com/backlo/stardium)**
-  * 관련 링크
-    * [공용 Repository](https://github.com/billionaire-boys/stardium)
+![image-20221228162302972](./images/4-team-project.png)
+
+* [Stardium 프로젝트](https://github.com/billionaire-boys/stardium)
+
+  * 2달간 진행한 팀 프로젝트
+  * 5명 팀을 이루어 협업
+  * 1차와 2차를 나누어 프로젝트 진행
+    * 1차 - 빠른 기능 제작과 서비스를 배포한다는 목적을 두고 팀 프로젝트 진행
+    * 2차 - 1차에서 마음에 안들거나 부족한 부분을 개선하기 위해 개인 프로젝트로 추가 진행
+
+  * 내가 맡은 업무
+    * 1차 - 팀 프로젝트
+      * Stardium 서비스의 프론트 작업 진행 (thyme leaf, bootstrap 등)
+      * 유저 관련 도메인 기능 구현 (CRUD, 차단 등)
+      * 써드파티 로그인 기능 구현
+    * 2차 - 개인 프로젝트
+      * 동기에서 비동기로 변경 -> Rest API로 변경
+      * 쿼리 튜닝
+      * 세션 인증 -> OAuth + Jwt 방식으로 변경
+      * 멀티 모듈 도입
+      * **자세한 내용은 링크를 통해 확인해주시면 감사하겠습니다 :) - [업무 상세 보기](https://github.com/backlo/stardium)**
+    * 관련 링크
+      * [동영상 링크](https://www.youtube.com/watch?v=wkLuv0CkU60)
+    
+
 
 <br/>
 
