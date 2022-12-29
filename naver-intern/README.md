@@ -83,7 +83,7 @@
 
       * 인덱스 매핑 정보 설계 결과
 
-        <img src="./images/1-2-1.png" alt="image-20221228174722041" style="zoom:25%;" />
+        ![20221228174722041](./images/1-2-1.png){: width="25%}
 
 3. **Elasticsearch 샤드 개수, 레플리카 개수 설계 및 성능 검증**
 
